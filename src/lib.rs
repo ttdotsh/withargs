@@ -1,7 +1,7 @@
 use proc_macro::TokenStream;
 
 #[proc_macro_attribute]
-pub fn main(attr: TokenStream, item: TokenStream) -> TokenStream {
+pub fn withargs(attr: TokenStream, item: TokenStream) -> TokenStream {
     entry::main(attr.into(), item.into())
         .map_or_else(|err| err.to_compile_error(), std::convert::identity)
         .into()

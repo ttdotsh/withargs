@@ -1,6 +1,7 @@
 use std::{fmt::Display, str::FromStr};
+use withargs::withargs;
 
-#[see_ell_eye::main]
+#[withargs]
 fn main(greeting: Greeting, name: String) {
     println!("{}, {}!", greeting, name);
 }
